@@ -101,8 +101,8 @@ function initHandTracking(onResults) {
             GestureState.handRotationZ = _smoothedRotationZ;
             GestureState.openness = calcFingerOpenness(lm);
 
-            const rawType = GestureState.openness > 0.7 ? 'open' :
-                            GestureState.openness < 0.25 ? 'fist' : 'normal';
+            const rawType = GestureState.openness > 0.6 ? 'open' :
+                            GestureState.openness < 0.3 ? 'fist' : 'normal';
             GestureState.gestureType = stabilizeGesture(rawType);
         } else {
             GestureState.handDetected = false;
