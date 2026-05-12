@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 互动演示</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <header class="gallery-header">
+        <h1>3D 互动演示集</h1>
+        <p class="subtitle">Three.js × MediaPipe 手势交互</p>
+    </header>
+
+    <div id="gallery-grid" class="gallery-grid">
+        <!-- 卡片由 gallery.js 动态生成 -->
+    </div>
+
+    <!-- 全屏预览模态框 -->
+    <div id="preview-modal" class="preview-modal">
+        <div class="preview-header">
+            <button id="btn-back" class="btn-back">← 返回</button>
+            <span id="preview-title" class="preview-title"></span>
+            <button id="btn-fullscreen" class="btn-fullscreen" title="全屏">⛶</button>
+        </div>
+        <div class="preview-body">
+            <iframe id="preview-iframe" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="gallery.js"></script>
+</body>
+</html>

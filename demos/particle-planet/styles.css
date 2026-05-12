@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+#canvas3d {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* UI 面板容器 */
+#ui-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s;
+}
+
+/* 全屏时隐藏 UI */
+body.fullscreen #ui-overlay,
+:fullscreen #ui-overlay,
+:-webkit-full-screen #ui-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 左上角信息面板 */
+#info-panel {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    pointer-events: auto;
+}
+
+#info-panel h1#title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-shadow: 0 0 12px rgba(255, 140, 30, 0.6);
+}
+
+#camera-status {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+#camera-status .on { color: #4caf50; }
+#camera-status .off { color: #f44336; }
+
+#guide {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* 右下角摄像头预览 */
+#preview-panel {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 220px;
+    height: 165px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events: auto;
+}
+
+#preview-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform: scaleX(-1); /* 镜像 */
+}
+
+/* 手势状态标签（叠加在预览上方） */
+#gesture-label {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 6px;
+    padding: 4px 0;
+    backdrop-filter: blur(4px);
+    text-shadow: 0 0 6px rgba(0,0,0,0.8);
+}

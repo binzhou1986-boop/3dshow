@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>粒子星球</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="canvas3d"></canvas>
+
+    <!-- 摄像头画面（用于标注） -->
+    <video id="video" playsinline style="display:none"></video>
+
+    <!-- UI 面板容器 -->
+    <div id="ui-overlay">
+        <!-- 左上角：标题 + 摄像头状态 + 操作指南 -->
+        <div id="info-panel">
+            <h1 id="title">粒子星球</h1>
+            <div id="camera-status"> 摄像头：<span id="cam-state">初始化中...</span></div>
+            <div id="guide">
+                <div> 旋转手 → 星球同步旋转</div>
+                <div>🖐 5指张开 → 靠近（滚动效果）</div>
+                <div>✊ 握拳 → 远离（滚动效果）</div>
+                <div> 鼠标拖拽 / 滚轮</div>
+                <div> 双击切换全屏</div>
+            </div>
+        </div>
+
+        <!-- 右下角：摄像头预览 -->
+        <div id="preview-panel">
+            <canvas id="preview-canvas"></canvas>
+        </div>
+    </div>
+
+    <!-- Three.js -->
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4/hands.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js" crossorigin="anonymous"></script>
+
+    <script src="hand.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

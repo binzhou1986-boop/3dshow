@@ -1,0 +1,16 @@
+[
+    {
+        "id": "particle-planet",
+        "name": "粒子星球",
+        "description": "橙色粒子球体 + 星环 + 手势控制旋转缩放",
+        "tags": ["threejs", "mediapipe", "手势识别"],
+        "thumbnail": "demos/particle-planet/thumb.jpg"
+    },
+    {
+        "id": "flying-swords",
+        "name": "青竹蜂云剑阵",
+        "description": "凡人修仙传风格，256把青竹蜂云剑环绕飞行，化龙跟随手势",
+        "tags": ["threejs", "mediapipe", "凡人修仙传", "飞剑阵", "手势识别"],
+        "thumbnail": "demos/flying-swords/thumb.jpg"
+    }
+]
