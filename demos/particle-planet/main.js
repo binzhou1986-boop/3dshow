@@ -405,6 +405,8 @@
             zoomTarget = 0;   // 无手势 → 停止缩放
         }
 
+        console.log('gestureType:', state.gestureType, 'openness:', state.openness.toFixed(2), 'zoomTarget:', zoomTarget);
+
         updateGestureStatus(state);
     }
 
@@ -497,16 +499,14 @@
         if (zoomTarget !== 0) {
             const distRatio = (currentDist - CONFIG.camera.minDistance) /
                              (CONFIG.camera.maxDistance - CONFIG.camera.minDistance);
-            const baseSpeed = 0.3;
+            const baseSpeed = 0.35;
             const slowDown = 1 - distRatio * 0.5;
             currentDist += zoomTarget * baseSpeed * slowDown;
             currentDist = Math.max(CONFIG.camera.minDistance,
                           Math.min(CONFIG.camera.maxDistance, currentDist));
         }
-        // 相机位置平滑插值
-        const currentDir = camera.position.clone().normalize();
-        const targetPos = currentDir.multiplyScalar(currentDist);
-        camera.position.lerp(targetPos, 0.12);
+        // 直接设置相机距离，保持方向不变
+        camera.position.normalize().multiplyScalar(currentDist);
         camera.lookAt(0, 0, 0);
 
         // 发光 sprite 脉动

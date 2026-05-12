@@ -6,7 +6,11 @@
       "Bash(git push *)",
       "Bash(gh repo *)",
       "Bash(git add *)",
-      "Bash(git commit -m 'fix: 粒子星球手势缩放灵敏度优化 *)"
+      "Bash(git commit -m 'fix: 粒子星球手势缩放灵敏度优化 *)",
+      "Bash(rm -rf 3DShow-deploy.tar.gz)",
+      "Bash(tar -czf 3DShow-deploy.tar.gz --exclude=\".claude\" 3DShow/)",
+      "Bash(tar -tzf 3DShow-deploy.tar.gz)",
+      "Bash(tar --exclude=\"3DShow/.git\" --exclude=\"3DShow/.claude\" -czf 3DShow-deploy.tar.gz 3DShow/)"
     ]
   }
 }
